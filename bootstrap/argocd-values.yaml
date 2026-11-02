@@ -1,0 +1,12 @@
+# Minimal ArgoCD install for the reference platform.
+configs:
+  params:
+    # Local demo only: the UI is reached through port-forward. Keep TLS on in production.
+    server.insecure: false
+  cm:
+    # Hide the anonymous user; access is through SSO/admin only.
+    users.anonymous.enabled: "false"
+dex:
+  enabled: false
+notifications:
+  enabled: false
